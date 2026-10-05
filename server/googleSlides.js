@@ -32,7 +32,8 @@ function loadCredentials() {
     oauth2Client = new google.auth.OAuth2(
         web.client_id,
         web.client_secret,
-        "http://localhost:5000/oauth2callback"
+        process.env.GOOGLE_REDIRECT_URI || "http://localhost:5000/oauth2callback"
+        
     );
 
     return oauth2Client;
