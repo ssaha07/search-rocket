@@ -15,7 +15,7 @@ function ResultsPage() {
     useEffect(() => {
         async function search() {
             try{
-                const response = await fetch(`http://127.0.0.1:5000/api/search?q=${encodeURIComponent(query)}`);
+                const response = await fetch(`https://search-rocket.onrender.com/api/search?q=${encodeURIComponent(query)}`);
                 const data=await response.json();
                 setResults(data.results);
                 setSearchTime(data.searchTime);
